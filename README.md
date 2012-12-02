@@ -11,6 +11,7 @@ Install the gem and require it:
 ```
 $ gem install ruby-ares
 ```
+```ruby
 require 'ruby-ares'
 ```
 ## Usage
