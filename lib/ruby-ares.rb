@@ -1,7 +1,4 @@
-# encoding: utf-8
-
-require 'xml'
-require 'libxml'
+require 'nokogiri'
 require 'net/http'
 require 'ruby-ares/subject'
 require 'ruby-ares/address'

@@ -4,7 +4,7 @@ require 'ruby-ares/parser'
 require 'ruby-ares/http'
 
 module RubyARES
-  class Subject  
+  class Subject
     attr_reader :ico,       # ICO
                 :ic,        # alias for ic
                 :dic,       # DIC
@@ -13,12 +13,12 @@ module RubyARES
                 :status,    # Stav
                 :addresses,
                 :updated_at # Datum_zmeny
-    
+
     def self.get(ic)
       xml = RubyARES::HTTP.fetch_subject_xml ic
       RubyARES::Parser.get_subject xml
     end
-    
+
     def initialize(ic, dic, name, status, addresses, updated_at)
       @ic, @ico = ic, ic
       @dic = dic
@@ -27,7 +27,7 @@ module RubyARES
       @addresses = addresses
       @updated_at = updated_at
     end
-    
+
     def address
       @addresses[0]
     end
