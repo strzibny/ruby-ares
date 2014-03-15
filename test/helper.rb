@@ -1,7 +1,7 @@
 # encoding: UTF-8
 
 class RubyARESTestHelper
-  
+
   def self.subject_xml
 <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
@@ -252,9 +252,9 @@ Poskytování technických služeb k ochraně majetku a osob
 </are:Odpoved>
 </are:Ares_odpovedi>
 EOF
-	end
+  end
 
-	def self.error_responce_xml
+  def self.error_responce_xml
 <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <are:Ares_odpovedi xmlns:are="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer_rzp/v_1.0.4" xmlns:dtt="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_datatypes/v_1.0.4" xmlns:udt="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/uvis_datatypes/v_1.0.1" odpoved_datum_cas="2012-12-02T23:05:21" odpoved_pocet="1" odpoved_typ="Vypis_RZP" vystup_format="XML" xslt="klient" validation_XSLT="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_odpovedi.xsl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer_rzp/v_1.0.4 http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_answer_rzp/v_1.0.4/ares_answer_rzp_v_1.0.4.xsd" Id="ares">
@@ -273,5 +273,5 @@ Chyba 31 - nezadán žádný vyhledávací klíč
 </are:Odpoved>
 </are:Ares_odpovedi>
 EOF
-	end
+  end
 end

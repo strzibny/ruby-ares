@@ -10,7 +10,7 @@ module RubyARES
                 :house_number_type,     # Typ_cislo_domovni
                 :orientational_number,  # Cislo_orientacni
                 :postcode               # PSC
-                
+
     def initialize(id, street, postcode, city, city_part,
                    house_number, house_number_type, orientational_number)
       @id = id
@@ -22,7 +22,7 @@ module RubyARES
       @house_number_type = house_number_type
       @orientational_number = orientational_number
     end
-                
+
     def to_str
       @city_part = '' if @city == @city_part
 <<EOF
@@ -31,7 +31,7 @@ module RubyARES
 #{self.city_part}
 EOF
     end
-    
+
     def street_number
       unless @orientational_number
         @house_number
@@ -39,11 +39,11 @@ EOF
         "#{@orientational_number}/#{@house_number}"
       end
     end
-    
+
     def street_line
       "#{@street} #{street_number}"
     end
-    
+
     def city_line
       "#{@postcode} #{@city}"
     end

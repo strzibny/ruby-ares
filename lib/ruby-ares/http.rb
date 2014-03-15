@@ -4,9 +4,9 @@ require 'net/http'
 
 module RubyARES
   class HTTP
-    
+
     class ConnectionError < StandardError; end
-    
+
     def self.fetch_subject_xml(ic)
       # Get a subject info from ARES[http://wwwinfo.mfcr.cz/ares/]
       uri = URI('http://wwwinfo.mfcr.cz/cgi-bin/ares/darv_rzp.cgi')
