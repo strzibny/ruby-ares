@@ -2,9 +2,12 @@ require 'rubygems/package_task'
 require 'rake'
 require 'rake/testtask'
 
+$LOAD_PATH.unshift(File.join(File.dirname(__FILE__), 'lib'))
+require 'ruby-ares'
+
 gemspec = Gem::Specification.new do |s|
   s.name     = 'ruby-ares'
-  s.version  = '0.0.1'
+  s.version  = RubyARES::VERSION
   s.platform = Gem::Platform::RUBY
   s.summary     = 'Gem for accesing business information from ARES database.'
   s.description = <<-EOF
