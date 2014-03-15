@@ -14,6 +14,13 @@ $ gem install ruby-ares
 ```ruby
 require 'ruby-ares'
 ```
+
+This will need libxml2 (with header files) installed. On Fedora:
+
+```
+su -c 'yum install libxml2-devel'
+```
+
 ## Usage
 
 To get an ARES subjet/party by IČ:
@@ -22,7 +29,7 @@ subject = RubyARES::Subject.get(74948440)
 ```
 And then:
 ```ruby
-subject => #<RubyARES::Subject:0x007fc691a77470 @ico="74948440", @ic="74948440", @dic=nil, @name="Josef Stříbný", @company=nil, @status="A", @addresses=[#<RubyARES::Address:0x007fc691a776a0 @id="10731009", @street="Nádražní", @postcode="74727", @city="Kobeřice", @city_part="Kobeřice", @house_number="721", @house_number_type="1", @orientational_number=nil>], @updated_at="2009-08-25"> 
+subject => #<RubyARES::Subject:0x007fc691a77470 @ico="74948440", @ic="74948440", @dic=nil, @name="Josef Stříbný", @company=nil, @status="A", @addresses=[#<RubyARES::Address:0x007fc691a776a0 @id="10731009", @street="Nádražní", @postcode="74727", @city="Kobeřice", @city_part="Kobeřice", @house_number="721", @house_number_type="1", @orientational_number=nil>], @updated_at="2009-08-25">
 subject.name => Josef Stříbný
 subject.ic => 74948440
 subject.address => #<RubyARES::Address:0x007fc691a776a0 @id="10731009", @street="Nádražní", @postcode="74727", @city="Kobeřice", @city_part="Kobeřice", @house_number="721", @house_number_type="1", @orientational_number=nil>
