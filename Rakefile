@@ -14,13 +14,13 @@ gemspec = Gem::Specification.new do |s|
   s.licenses = ["GPLv3"]
   s.author   = "Josef Strzibny"
   s.email    = "strzibny@strzibny.name"
-  s.homepage = "http://github.com/strzibny/ares"
+  s.homepage = "http://github.com/strzibny/ruby-ares"
   s.required_ruby_version     = ">= 1.8.7"
   s.required_rubygems_version = ">= 1.8.0"
   s.files = FileList["README.md", "Rakefile",
                       "lib/**/*.rb", "test/**/test*.rb"]
   s.add_runtime_dependency "libxml-ruby"
-  s.requires 'libxml2'
+  s.requirements << 'libxml2'
 end
 
 Gem::PackageTask.new gemspec do |pkg|
