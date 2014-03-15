@@ -19,6 +19,8 @@ gemspec = Gem::Specification.new do |s|
   s.required_rubygems_version = ">= 1.8.0"
   s.files = FileList["README.md", "Rakefile",
                       "lib/**/*.rb", "test/**/test*.rb"]
+  s.add_runtime_dependency "libxml-ruby"
+  s.requires 'libxml2'
 end
 
 Gem::PackageTask.new gemspec do |pkg|
