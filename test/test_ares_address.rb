@@ -1,9 +1,9 @@
 # encoding: UTF-8
 
-require 'test/unit'
+require 'minitest/autorun'
 require 'ruby-ares/address'
 
-class RubyARESAddressTest < Test::Unit::TestCase
+class RubyARESAddressTest < Minitest::Test
 
   def setup
     @address = RubyARES::Address.new(1, 'Kunzova', '10010', 'Brno', 'Královo pole', 1, 1, nil)

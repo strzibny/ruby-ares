@@ -1,13 +1,13 @@
 # encoding: UTF-8
 
-require 'test/unit'
+require 'minitest/autorun'
 require 'helper'
 require 'ruby-ares/parser'
 
-class RubyARESParserTest < Test::Unit::TestCase
+class RubyARESParserTest < Minitest::Test
 
   def test_parser_should_fail
-    assert_raise(RubyARES::Parser::ARESDatabaseError) {
+    assert_raises(RubyARES::Parser::ARESDatabaseError) {
       RubyARES::Parser.get_subject(RubyARESTestHelper.error_responce_xml)
     }
   end

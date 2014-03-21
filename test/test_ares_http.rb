@@ -1,8 +1,8 @@
 # encoding: UTF-8
 
-require 'test/unit'
+require 'minitest/autorun'
 require 'ruby-ares/http'
 
-class RubyARESHTTPTest < Test::Unit::TestCase
+class RubyARESHTTPTest < Minitest::Test
 
 end

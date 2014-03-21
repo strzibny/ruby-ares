@@ -1,10 +1,10 @@
 # encoding: UTF-8
 
-require 'test/unit'
+require 'minitest/autorun'
 require 'helper'
 require 'ruby-ares'
 
-class RubyARESTest < Test::Unit::TestCase
+class RubyARESTest < Minitest::Test
   def setup
     @subject = RubyARES::Parser.get_subject RubyARESTestHelper.subject_xml
   end

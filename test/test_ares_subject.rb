@@ -1,8 +1,8 @@
 # encoding: UTF-8
 
-require 'test/unit'
+require 'minitest/autorun'
 require 'ruby-ares/subject'
 
-class RubyARESSubjectTest < Test::Unit::TestCase
+class RubyARESSubjectTest < Minitest::Test
 
 end
