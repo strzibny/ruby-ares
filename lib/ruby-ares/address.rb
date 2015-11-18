@@ -24,11 +24,10 @@ module RubyARES
     end
 
     def to_str
-      @city_part = '' if @city == @city_part
 <<EOF
-#{self.street} #{self.street_number}
+#{self.street.nil? ? self.city_part : self.street} #{self.street_number}
 #{self.postcode} #{self.city}
-#{self.city_part}
+#{self.city_part == self.city ? "" : self.city_part}
 EOF
     end
 
