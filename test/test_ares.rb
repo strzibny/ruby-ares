@@ -41,6 +41,10 @@ class RubyARESTest < Minitest::Test
     assert_equal 'Akciová společnost', @subject.legal_form
   end
 
+  def test_subject_legal_form_id
+    assert_equal '121', @subject.legal_form_id
+  end
+
   def test_subject_status
     assert_equal 'Aktivní', @subject.status
   end
@@ -48,4 +52,17 @@ class RubyARESTest < Minitest::Test
   def test_number_of_subject_addresses
     assert_equal 1, @subject.addresses.size
   end
+
+  def test_case_reference_place
+    assert_equal 'Městský soud v Praze', @subject.case_reference.place
+  end
+
+  def test_case_reference_section
+    assert_equal 'B', @subject.case_reference.section
+  end
+
+  def test_case_reference_insert
+    assert_equal '8525', @subject.case_reference.insert
+  end
+
 end

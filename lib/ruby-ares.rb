@@ -5,6 +5,7 @@ require 'libxml'
 require 'net/http'
 require 'ruby-ares/subject'
 require 'ruby-ares/address'
+require 'ruby-ares/case_reference'
 require 'ruby-ares/parser'
 
 module RubyARES
