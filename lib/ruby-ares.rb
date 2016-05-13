@@ -9,5 +9,5 @@ require 'ruby-ares/case_reference'
 require 'ruby-ares/parser'
 
 module RubyARES
-  VERSION = '0.0.2'
+  VERSION = '0.0.3'
 end

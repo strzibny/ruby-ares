@@ -54,13 +54,16 @@ ruby-ares will raise either `RubyARES::Parser::ARESDatabaseError` or `RubyARES::
 
 If the connection to the ARES database can't be established ruby-ares raises `RubyARES::HTTP::ConnectionError`.
 
-## Changelog
-
-### 1.0.0
-
-* added ARES legal form id
-* added support for case reference
-
 ## License
 
-See LICENSE
+ruby-ares is written and maintained by [Josef Strzibny](http://strzibny.name).
+
+See LICENSE file.
+
+## Contributors
+
+Contributions are welcome!
+
+Here are the list of current contributors:
+
+- Jindřich Skupa
