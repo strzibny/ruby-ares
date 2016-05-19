@@ -21,18 +21,31 @@ This will need libxml2 (with header files) installed. On Fedora:
 su -c 'yum install libxml2-devel'
 ```
 
+### Gained information
+
+* ICO / Company number
+* DIC / VAT number
+* Company name
+* Company state
+* Addresses
+* Legal form / Legal form ARES id
+* Case reference (where company is registered)
+
 ## Usage
 
 To get an ARES subjet/party by IČ:
 ```ruby
-subject = RubyARES::Subject.get(74948440)
+subject = RubyARES::Subject.get(27074358)
 ```
 And then:
 ```ruby
-subject => #<RubyARES::Subject:0x000000013ac2c0 @ico="74948440", @ic="74948440", @dic=nil, @name="Josef Stříbný", @company=nil, @status=nil, @addresses=[#<RubyARES::Address:0x000000013ac978 @id="406358731", @street="Nádražní", @postcode="74727", @city="Kobeřice", @city_part="Kobeřice", @house_number="721", @house_number_type="1", @orientational_number=nil>], @updated_at=nil, @legal_form="Fyzická osoba podnikající dle živnostenského zákona nezapsaná v obchodním rejstříku">
-subject.name => Josef Stříbný
-subject.ic => 74948440
-subject.address => #<RubyARES::Address:0x007fc691a776a0 @id="406358731", @street="Nádražní", @postcode="74727", @city="Kobeřice", @city_part="Kobeřice", @house_number="721", @house_number_type="1", @orientational_number=nil>
+subject => #<RubyARES::Subject:0x00000002502470 @ico=”27074358”, @ic=”27074358”, @dic=”CZ27074358”, @name=”Asseco Central Europe, a.s.”, @company=nil, @status=”Aktivní”, @addresses=[#<RubyARES::Address:0x000000025026f0 @id=”200015797”, @street=”Budějovická”, @postcode=”14000”, @city=”Praha”, @city_part=”Michle”, @house_number=”778”, @house_number_type=”1”, @orientational_number=”3a”>], @updated_at=nil, @legal_form=”Akciová společnost”, @legal_form_id=”121”, @case_reference=#<RubyARES::CaseReference:0x00000001e386f8 @place=”Městský soud v Praze”, @section=”B”, @insert=”8525”>>
+subject.name => “Asseco Central Europe, a.s.”
+subject.ic => “27074358”
+subject.address => #<RubyARES::Address:0x000000025026f0 @id=”200015797”, @street=”Budějovická”, @postcode=”14000”, @city=”Praha”, @city_part=”Michle”, @house_number=”778”, @house_number_type=”1”, @orientational_number=”3a”>
+subject.address.to_str => “Budějovická 3a/778\n14000 Praha\nMichle\n”
+subject.case_reference => #<RubyARES::CaseReference:0x00000001e386f8 @place=”Městský soud v Praze”, @section=”B”, @insert=”8525”>
+subject.case_reference.to_str => “Městský soud v Praze B 8525”
 ```
 
 ### Exceptions

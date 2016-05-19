@@ -24,6 +24,13 @@ module RubyARES
           @dic = node.find('D:DIC').to_a[0].content unless node.find('D:DIC').to_a.size == 0
           @name = node.find('D:OF').to_a[0].content unless node.find('D:OF').to_a.size == 0
           @legal_form = node.find('D:PF/D:NPF').to_a[0].content unless node.find('D:PF/D:NPF').to_a.size == 0
+          @legal_form_id = node.find('D:PF/D:KPF').to_a[0].content unless node.find('D:PF/D:KPF').to_a.size == 0
+
+          place = node.find('//D:SZ/D:SD/D:T').to_a[0].content unless node.find('//D:SZ/D:SD/D:T').to_a.size == 0
+          record = node.find('//D:SZ/D:OV').to_a[0].content unless node.find('//D:SZ/D:OV').to_a.size == 0
+          section, insert = record.split if record
+
+          @case_reference = RubyARES::CaseReference.new(place, section, insert)
         end
 
         # Corresponding addresses
@@ -37,7 +44,7 @@ module RubyARES
       end
 
       # Create and return subject
-      return RubyARES::Subject.new(@ic, @dic, @name, @status, @addresses, @updated_at, @legal_form)
+      return RubyARES::Subject.new(@ic, @dic, @name, @status, @addresses, @updated_at, @legal_form, @legal_form_id, @case_reference)
     end
 
     protected
