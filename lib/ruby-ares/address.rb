@@ -10,9 +10,10 @@ module RubyARES
                 :house_number_type,     # Typ_cislo_domovni
                 :orientational_number,  # Cislo_orientacni
                 :postcode               # PSC
+                :county                 # Okres
 
     def initialize(id, street, postcode, city, city_part,
-                   house_number, house_number_type, orientational_number)
+                   house_number, house_number_type, orientational_number, county)
       @id = id
       @street = street
       @postcode = postcode
@@ -21,6 +22,7 @@ module RubyARES
       @house_number = house_number
       @house_number_type = house_number_type
       @orientational_number = orientational_number
+      @county = county
     end
 
     def to_str

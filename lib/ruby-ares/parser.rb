@@ -29,8 +29,14 @@ module RubyARES
           place = node.find('//D:SZ/D:SD/D:T').to_a[0].content unless node.find('//D:SZ/D:SD/D:T').to_a.size == 0
           record = node.find('//D:SZ/D:OV').to_a[0].content unless node.find('//D:SZ/D:OV').to_a.size == 0
           section, insert = record.split if record
+          state = node.find('//D:SOR/D:SSU').to_a[0].content unless node.find('//D:SOR/D:SSU').to_a.size == 0
+          bankruptcy = node.find('//D:SOR/D:KKZ/D:K').to_a[0].content unless node.find('//D:SOR/D:KKZ/D:K').to_a.size == 0
+          compensation = node.find('//D:SOR/D:VY/D:K').to_a[0].content unless node.find('//D:SOR/D:VY/D:K').to_a.size == 0
+          refusal = node.find('//D:SOR/D:ZAM/D:K').to_a[0].content unless node.find('//D:SOR/D:ZAM/D:K').to_a.size == 0
+          liquidation = node.find('//D:SOR/D:LI/D:K').to_a[0].content unless node.find('//D:SOR/D:LI/D:K').to_a.size == 0
 
           @case_reference = RubyARES::CaseReference.new(place, section, insert)
+          @state = RubyARES::State.new(state, bankruptcy, compensation, refusal, liquidation)
         end
 
         # Corresponding addresses
@@ -44,7 +50,7 @@ module RubyARES
       end
 
       # Create and return subject
-      return RubyARES::Subject.new(@ic, @dic, @name, @status, @addresses, @updated_at, @legal_form, @legal_form_id, @case_reference)
+      return RubyARES::Subject.new(@ic, @dic, @name, @status, @addresses, @updated_at, @legal_form, @legal_form_id, @case_reference, @state)
     end
 
     protected
@@ -61,9 +67,10 @@ module RubyARES
           house_number = node.find('D:CD').to_a[0].content unless node.find('D:CD').to_a.size == 0
           house_number_type = node.find('D:TCD').to_a[0].content unless node.find('D:TCD').to_a.size == 0
           orientational_number = node.find('D:CO').to_a[0].content unless node.find('D:CO').to_a.size == 0
+          county = node.find('D:NOK').to_a[0].content unless node.find('D:NOK').to_a.size == 0
 
           @addresses << RubyARES::Address.new(id, street, postcode, city, city_part,
-                                          house_number, house_number_type, orientational_number)
+                                          house_number, house_number_type, orientational_number, county)
         end
 
         return @addresses

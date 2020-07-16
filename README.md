@@ -30,6 +30,7 @@ su -c 'yum install libxml2-devel'
 * Addresses
 * Legal form / Legal form ARES id
 * Case reference (where company is registered)
+* Company status
 
 ## Usage
 
@@ -39,13 +40,14 @@ subject = RubyARES::Subject.get(27074358)
 ```
 And then:
 ```ruby
-subject => #<RubyARES::Subject:0x00000002502470 @ico=”27074358”, @ic=”27074358”, @dic=”CZ27074358”, @name=”Asseco Central Europe, a.s.”, @company=nil, @status=”Aktivní”, @addresses=[#<RubyARES::Address:0x000000025026f0 @id=”200015797”, @street=”Budějovická”, @postcode=”14000”, @city=”Praha”, @city_part=”Michle”, @house_number=”778”, @house_number_type=”1”, @orientational_number=”3a”>], @updated_at=nil, @legal_form=”Akciová společnost”, @legal_form_id=”121”, @case_reference=#<RubyARES::CaseReference:0x00000001e386f8 @place=”Městský soud v Praze”, @section=”B”, @insert=”8525”>>
+subject => #<RubyARES::Subject:0x00007fe2368f7918 @ico="27074358", @ic="27074358", @dic="CZ27074358", @name="Asseco Central Europe, a.s.", @company=nil, @status="Aktivní", @state=#<RubyARES::State:0x00007fe2368cf620 @state=:active, @bankruptcy=0, @compensation=0, @refusal=0, @liquidation=0>, @addresses=[#<RubyARES::Address:0x00007fe2368ec0b8 @id="209786397", @street="Budějovická", @postcode="14000", @city="Praha", @city_part="Michle", @house_number="778", @house_number_type="1", @orientational_number="3a", @county=nil>], @updated_at=nil, @legal_form="Akciová společnost", @legal_form_id="121", @case_reference=#<RubyARES::CaseReference:0x00007fe2368cf6e8 @place="Městský soud v Praze", @section="B", @insert="8525">>
 subject.name => “Asseco Central Europe, a.s.”
 subject.ic => “27074358”
 subject.address => #<RubyARES::Address:0x000000025026f0 @id=”200015797”, @street=”Budějovická”, @postcode=”14000”, @city=”Praha”, @city_part=”Michle”, @house_number=”778”, @house_number_type=”1”, @orientational_number=”3a”>
 subject.address.to_str => “Budějovická 3a/778\n14000 Praha\nMichle\n”
 subject.case_reference => #<RubyARES::CaseReference:0x00000001e386f8 @place=”Městský soud v Praze”, @section=”B”, @insert=”8525”>
 subject.case_reference.to_str => “Městský soud v Praze B 8525”
+subject.state => #<RubyARES::State:0x00007fe2368cf620 @state=:active, @bankruptcy=0, @compensation=0, @refusal=0, @liquidation=0>
 ```
 
 ### Exceptions
