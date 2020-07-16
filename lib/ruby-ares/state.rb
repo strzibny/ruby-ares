@@ -2,6 +2,9 @@
 
 module RubyARES
   class State
+
+    # mappings source: http://wwwinfo.mfcr.cz/ares/xml_doc/schemas/ares/ares_datatypes/v_1.0.3/ares_datatypes_v_1.0.3.xsd
+    
     MAPPINGS_STATE = {
       "Aktivní" => :active,
       "Zaniklý" => :closed
