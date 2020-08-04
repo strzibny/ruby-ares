@@ -6,8 +6,9 @@ require 'net/http'
 require 'ruby-ares/subject'
 require 'ruby-ares/address'
 require 'ruby-ares/case_reference'
+require 'ruby-ares/state'
 require 'ruby-ares/parser'
 
 module RubyARES
-  VERSION = '0.0.3'
+  VERSION = '0.0.4'
 end

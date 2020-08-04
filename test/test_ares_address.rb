@@ -6,7 +6,7 @@ require 'ruby-ares/address'
 class RubyARESAddressTest < Minitest::Test
 
   def setup
-    @address = RubyARES::Address.new(1, 'Kunzova', '10010', 'Brno', 'Královo pole', 1, 1, nil)
+    @address = RubyARES::Address.new(1, 'Kunzova', '10010', 'Brno', 'Královo pole', 1, 1, nil, nil)
   end
 
   def test_address_to_string

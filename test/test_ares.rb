@@ -65,4 +65,16 @@ class RubyARESTest < Minitest::Test
     assert_equal '8525', @subject.case_reference.insert
   end
 
+  def test_state_active
+    assert_equal :active, @subject.state.state
+  end
+
+  def test_state_liquidation
+    assert_equal 0, @subject.state.liquidation
+  end
+
+  def test_state_mappings
+    assert_equal 'není a nebyl', RubyARES::State.kvz_to_str(@subject.state.liquidation)
+  end
+
 end

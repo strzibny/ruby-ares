@@ -13,6 +13,7 @@ module RubyARES
                 :legal_form,# Pravni forma
                 :legal_form_id, # Id pravni formy
                 :status,    # Stav
+                :state,      # Stav - podrobneji
                 :case_reference, # Spisova znacka
                 :addresses, # Adresy
                 :updated_at # Datum_zmeny
@@ -22,11 +23,12 @@ module RubyARES
       RubyARES::Parser.get_subject xml
     end
 
-    def initialize(ic, dic, name, status, addresses, updated_at, legal_form, legal_form_id, case_reference)
+    def initialize(ic, dic, name, status, addresses, updated_at, legal_form, legal_form_id, case_reference, state)
       @ic, @ico = ic, ic
       @dic = dic
       @name, @company = name
       @status = status
+      @state = state
       @addresses = addresses
       @updated_at = updated_at
       @legal_form = legal_form
