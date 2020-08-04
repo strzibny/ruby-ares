@@ -9,7 +9,7 @@ module RubyARES
                 :house_number,          # Cislo_domovni
                 :house_number_type,     # Typ_cislo_domovni
                 :orientational_number,  # Cislo_orientacni
-                :postcode               # PSC
+                :postcode,               # PSC
                 :county                 # Okres
 
     def initialize(id, street, postcode, city, city_part,
